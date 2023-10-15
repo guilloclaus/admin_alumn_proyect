@@ -7,6 +7,10 @@ import { HomeComponent } from './component/home/home.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { PageWrapperComponent } from './component/page-wrapper/page-wrapper.component';
 import { ToolbarComponent } from './component/toolbar/toolbar.component';
+import { AlumnosComponent } from './component/views/alumnos/alumnos.component';
+import { CursosComponent } from './component/views/cursos/cursos.component';
+import { InscripcionesComponent } from './component/views/inscripciones/inscripciones.component';
+import { ListaAlumnosComponent } from './component/views/lista-alumnos/lista-alumnos.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +18,11 @@ import { ToolbarComponent } from './component/toolbar/toolbar.component';
     HomeComponent,
     NavbarComponent,
     PageWrapperComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    AlumnosComponent,
+    CursosComponent,
+    InscripcionesComponent,
+    ListaAlumnosComponent
   ],
   imports: [
     BrowserModule,
