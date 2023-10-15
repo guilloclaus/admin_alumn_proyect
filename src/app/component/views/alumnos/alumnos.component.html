@@ -1,1 +1,162 @@
-<p>alumnos works!</p>
+<div class="row">
+  <div class="col-10">
+    <h1>Datos de alumno</h1>
+    <form (ngSubmit)="onSubmit()"
+          [formGroup]="registerForm"
+          autocomplete="off"
+          class="row g-3"
+    >
+          <div class="col-md-6">
+            <label for="inputFirstName" class="form-label">Nombre</label>
+            <input
+              formControlName="nombre"
+              type="text"
+              [ngClass]="{ 'is-invalid': nombreControlIsInvalid }"
+              class="form-control"
+              id="inputFirstName"
+            >
+            <div
+              *ngIf="nombreControl?.hasError('required') && nombreControlIsInvalid"
+              class="invalid-feedback">
+              Campo requerido.
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <label for="inputLastName" class="form-label">Apellido</label>
+            <input
+              formControlName="apellido"
+              type="text"
+              [ngClass]="{ 'is-invalid': apellidoControlIsInvalid }"
+              class="form-control"
+              id="inputLastName"
+            >
+            <div
+              *ngIf="apellidoControl?.hasError('required') && apellidoControlIsInvalid"
+              class="invalid-feedback">
+              Campo requerido.
+            </div>
+          </div>
+
+
+          <div class="col-md-2">
+            <label for="inputDocumento">Documento</label>
+            <input
+            formControlName="documento"
+            type="text"
+            [ngClass]="{ 'is-invalid': documentoControl.invalid && this.documentoControl.touched}"
+            class="form-control"
+            id="inputDocumento"
+            >
+            <div
+              *ngIf="documentoControl?.hasError('required') && this.documentoControl.touched"
+              class="invalid-feedback">
+              Campo requerido.
+            </div>
+          </div>
+
+
+
+          <div class="col-md-2">
+            <label for="inputTipoDocumento"></label>
+            <select id="optionTipoDocumento" class="form-select" formControlName="tipoDocumento" >
+              <option value="" selected>Seleccione ...</option>
+              <option value="1">DNI</option>
+              <option value="2">CUIL</option>
+              <option value="3">LC</option>
+              <option value="4">LE</option>
+            </select>
+          </div>
+
+          <div class="col-md-4">
+            <label for="inputEmail" class="form-label">Email</label>
+            <input
+              [formControl]="emailControl"
+              type="email"
+              [ngClass]="{ 'is-invalid': emailControl.invalid && this.emailControl.touched }"
+              class="form-control"
+              id="inputEmail"
+            >
+            <div *ngIf="emailControl.hasError('required') && this.emailControl.touched" class="invalid-feedback" >
+              Campo inválido.
+            </div>
+            <div *ngIf="emailControl.hasError('email') && this.emailControl.touched" class="invalid-feedback">
+              No es un email válido.
+            </div>
+          </div>
+          <div class="col-md-4"></div>
+          <ng-container formGroupName="localizacion">
+            <div class="col-md-4">
+              <label for="inputCalle">Calle</label>
+              <input
+                    formControlName="calle"
+                    type="text"
+                    [ngClass]="{ 'is-invalid': calleControl.invalid && this.calleControl.touched}"
+                    class="form-control"
+                    id="inputCalle"
+              >
+              <div
+                *ngIf="calleControl?.hasError('required') && this.calleControl.touched"
+                class="invalid-feedback">
+                Campo requerido.
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label for="inputNumeroCalle">Numero</label>
+              <input
+                    formControlName="numero"
+                    type="text"
+                    [ngClass]="{ 'is-invalid': numeroControl.invalid && this.numeroControl.touched}"
+                    class="form-control"
+                    id="inputNumeroCalle"
+              >
+              <div
+                *ngIf="numeroControl?.hasError('required') && this.numeroControl.touched"
+                class="invalid-feedback">
+                Campo requerido.
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label for="inputoPiso">Piso</label>
+              <input  type="text" class="form-control" id="inputoPiso">
+            </div>
+            <div class="col-md-4">
+              <label for="inputProvincia">Provincia</label>
+              <select id="inputState" class="form-select" formControlName="provincia" >
+                <option value="" selected>Seleccione ...</option>
+                <option value="1">Capital Federal</option>
+                <option value="2">Buenos Aires</option>
+                <option value="3">Santa Fe</option>
+                <option value="4">Cordoba</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <label for="inputCiudad">Ciudad</label>
+              <input
+                    formControlName="ciudad"
+                    type="text"
+                    [ngClass]="{ 'is-invalid': ciudadControl.invalid && this.ciudadControl.touched}"
+                    class="form-control"
+                    id="inputCiudad"
+              >
+              <div
+              *ngIf="ciudadControl?.hasError('required') && this.ciudadControl.touched"
+              class="invalid-feedback">
+              Campo requerido.
+            </div>
+            </div>
+            <div class="col-md-2">
+              <label for="inputCP">CP</label>
+              <input  type="text" class="form-control" id="inputCP">
+            </div>
+            <div class="col-2">
+            </div>
+          </ng-container>
+          <div class="col-12">
+          </div>
+          <div class="col-2">
+            <button type="submit" class="btn btn-primary" style="width: 20vh;">Aceptar</button>
+          </div>
+    </form>
+  </div>
+</div>
