@@ -11,6 +11,7 @@ import { AlumnosComponent } from './component/views/alumnos/alumnos.component';
 import { CursosComponent } from './component/views/cursos/cursos.component';
 import { InscripcionesComponent } from './component/views/inscripciones/inscripciones.component';
 import { ListaAlumnosComponent } from './component/views/lista-alumnos/lista-alumnos.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,9 @@ import { ListaAlumnosComponent } from './component/views/lista-alumnos/lista-alu
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
